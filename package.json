@@ -12,12 +12,14 @@
     "webapp:init": "cross-conf-env git submodule add $npm_package_config_webAppGitUrl web-app",
     "postwebapp:init": "git submodule status web-app",
     "modules:init": "git submodule update --init --recursive",
-    "modules:update": "git submodule update --recursive --remote"
+    "modules:update": "git submodule update --recursive --remote",
+    "init:env": "npx init-dev-env generate-dot-env example.env -f && init-dev-env generate-dot-env server-example.env --source=. --target=server -f"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "cross-conf-env": "^1.1.2",
+    "init-dev-env": "^1.0.0",
     "rimraf": "^3.0.2"
   }
 }
